@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+  --dark-cyan: hsl(158, 36%, 37%);
+  --very-dark-cyan: hsl(158, 97%, 12%);
+  --cream: hsl(30, 38%, 92%);
+
+  /* Neutral */
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: var(--cream);
+  font-size: 0.875rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-family: "Fraunces", sans-serif;
+  line-height: 1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1;
+  border-radius: 1rem;
+  max-width: 36rem;
+  background-color: var(--white);
+}
+
+.image__mobile {
+  border-radius: 1rem 1rem 0 0rem;
+}
+.image__desktop {
+  display: none;
+}
+
+.product__details {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.product__category {
+  text-transform: uppercase;
+  color: var(--dark-cyan);
+  letter-spacing: 0.2rem;
+}
+
+.product__desc,
+.product__discount {
+  color: var(--dark-grayish-blue);
+}
+.product__desc {
+  line-height: 1.5;
+}
+.product__footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product__discount {
+  text-decoration: line-through;
+}
+
+.product__price {
+  font-family: "Fraunces", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-cyan);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  border: 0px;
+  background-color: var(--dark-cyan);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--very-dark-cyan);
+}
+
+@media screen and (min-width: 640px) {
+  .image__mobile {
+    display: none;
+  }
+
+  .image__desktop {
+    display: block;
+    border-radius: 1rem 0 0 1rem;
+  }
+  .container {
+    grid-template-columns: 50% 50%;
+  }
+}
